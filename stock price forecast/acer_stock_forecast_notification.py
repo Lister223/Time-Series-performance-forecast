@@ -16,7 +16,7 @@ def get_stock(stock_code):
 
 #預測股價
 def predict_nextday_price(data):
-    ann_model = tf.keras.models.load_model(r'C:\Users\tyhoo\Documents\python project\PROJECT\Time Series performance forecast\stock price forecast\ANN_time_forecast_model')
+    ann_model = tf.keras.models.load_model(r'.\Time Series performance forecast\stock price forecast\ANN_time_forecast_model')
     data = np.array(data)
     data = data.reshape((1,20,1))
     predicted_price = ann_model.predict(data)
@@ -25,9 +25,9 @@ def predict_nextday_price(data):
 
 # 發送郵件通知
 def send_email(predicted_price):
-    sender_email = "u109075201@cmu.edu.tw"
-    receiver_email = "tyhood17@gmail.com"
-    password = "cgjq vhcg aqpe gkmz"
+    sender_email = "寄送EMAIL"
+    receiver_email = "收件EMAIL"
+    password = "寄送EMAIL 密碼"
 
     message = MIMEMultipart("alternative")
     message["Subject"] = "每日股價預測"
